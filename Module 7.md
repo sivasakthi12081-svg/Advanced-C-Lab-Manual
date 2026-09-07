@@ -86,26 +86,37 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
-
-
-
-
+```
+#include <stdio.h>
+struct eligible{
+    char n[30];
+    int age;
+};
+int main(){
+    struct eligible e[10];
+    int i, num;
+    printf("Enter the number of persons: ");
+    scanf("%d", &num);
+    for(i = 0; i < num; i++){
+        printf("\nEnter Name: ");
+        scanf("%s", e[i].n);
+        printf("Enter Age: ");
+        scanf("%d", &e[i].age);
+    }
+    printf("\n--- Vaccine Eligibility ---\n");
+    for(i = 0; i < num; i++){
+        printf("\nName : %s", e[i].n);
+        printf("\nAge  : %d", e[i].age);
+        if(e[i].age <= 6)
+            printf("\nVaccine Eligibility: No\n");
+        else
+            printf("\nVaccine Eligibility: Yes\n");
+    }
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
-
-
-
-
-
-
+<img width="959" height="502" alt="Screenshot 2026-09-07 172241" src="https://github.com/user-attachments/assets/9dcb4df5-9445-4d9c-834a-0c811f25613b" />
 Result:
 Thus, the program is verified successfully
  
